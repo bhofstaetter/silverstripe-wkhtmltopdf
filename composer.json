@@ -1,0 +1,18 @@
+{
+  "name": "creativesynergy/silverstripe-wkhtmltopdf",
+  "description": "Adds the possibility to create PDFs from all DataObjects with WKHTMLTOPDF",
+  "type": "silverstripe-module",
+  "keywords": ["silverstripe", "pdf", "wkhtmltopdf"],
+  "license": "GNU",
+  "authors": [
+    {
+      "name": "Benedikt Hofstaetter",
+      "email": "info@csy.io"
+    }
+  ],
+  "homepage": "https://www.csy.io",
+  "require": {
+    "silverstripe/framework": "^3.2",
+    "mikehaertl/phpwkhtmltopdf": "^2.1"
+  }  
+}
