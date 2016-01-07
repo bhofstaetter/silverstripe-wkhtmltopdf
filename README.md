@@ -8,6 +8,11 @@ This module adds the possibility to simply create PDFs from every DataObject you
 $ composer require creativesynergy/sivlerstripe-wkhtmltopdf
 ```
 
+## Getting started
+1. [WKhtmlTOpdf](http://wkhtmltopdf.org/) must be installed on your server to use this module
+2. You'll need to copy the footer.html and header.html files from the module templates folder to ``mysite/templates/Pdf/``
+3. Create a css file called 'pdf.css' located under ``themes/your-theme/css/``
+
 ## Usage
 
 #### Basics
