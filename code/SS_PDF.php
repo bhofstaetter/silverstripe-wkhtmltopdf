@@ -128,7 +128,7 @@ class SS_PDF {
 
   /**
   * Adds a normale page or cover to your pdf
-  * @param string $content            The html code from your DataObject or any website url
+  * @param string $content            The html code from your DataObject, a pdf file or any website url
   * @param string $type               "Page" for a normal page or if you want to add an cover "Cover"
   * @param array $options             Specific options only for that page
   *                                   A list with all possible options can be found here http://wkhtmltopdf.org/usage/wkhtmltopdf.txt
