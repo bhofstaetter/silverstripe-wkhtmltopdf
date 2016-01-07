@@ -153,6 +153,11 @@ $pdf->removeOption('footer-html');
 Demo Pdf.ss, header.html and footer.html files are included to get you started
 
 #### Styling
-Thanks to WKhtmlTOpdf you have full CSS3 and HTML5 support and will be able to do fancy things "without" the limitations you'll have to face while using other tools like dompdf or tcpdf.
+Thanks to WKhtmlTOpdf you have full CSS3 and HTML5 support and will be able to do fancy things "without" the limitations you'll have to face while using other tools like dompdf or tcpdf. You can even use javascript to modify your pages.
 
 By default the module requires a pdf.css in under themes/your-theme/css/pdf.css
+You can change this by setting the global or page specific option
+
+``` php
+$pdf->setOption('user-style-sheet', '/path/to/pdf.css');
+```
