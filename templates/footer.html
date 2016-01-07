@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" type="text/css">
+<script>
+  function pageNumbers() {
+    var vars={};
+    var x=window.location.search.substring(1).split('&');
+    for (var i in x) {var z=x[i].split('=',2);vars[z[0]] = unescape(z[1]);}
+    var x=['frompage','topage','page','webpage','section','subsection','subsubsection'];
+    for (var i in x) {
+      var y = document.getElementsByClassName(x[i]);
+      for (var j=0; j<y.length; ++j) y[j].textContent = vars[x[i]];
+    }
+  }
+
+  window.onload = function() {
+    pageNumbers();
+  };
+</script>
+
+<div id="pdf-footer">
+  <div id="spacer"></div>
+  <div id="inner">
+    <div id="inner-content">
+      Page <span class="page"></span> / <span class="topage"></span>
+    </div>
+  </div>
+</div>
