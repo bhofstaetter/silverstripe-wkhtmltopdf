@@ -25,8 +25,8 @@ class SS_PDF {
   public function setGlobalOptions($options = null) {
     if(!$options) {
       $css = BASE_PATH . '/themes/' . SSViewer::current_theme() . '/css/pdf.css';
-      $header = BASE_PATH . '/mysite/templates/Pdfs/header.html';
-      $footer = BASE_PATH . '/mysite/templates/Pdfs/footer.html';
+      $header = BASE_PATH . '/mysite/templates/Pdf/header.html';
+      $footer = BASE_PATH . '/mysite/templates/Pdf/footer.html';
 
       $options = array(
         'no-outline',
