@@ -33,7 +33,7 @@ $pdf->add('.../path/to/cover.html', 'Cover');     // You could use the same inpu
 ``` php
 $pdf->add('<html>...</html>');                    // Html code
 $pdf->add('.../path/to/page.html');               // Html file
-$pdf->add('https://www.csy.io');                  // Website
+$pdf->add('https://www.google.com');              // Website
 $pdf->add($pdf::generateHtml($dataObject));       // DataObject
 ```
 
