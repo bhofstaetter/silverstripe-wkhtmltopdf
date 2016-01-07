@@ -130,7 +130,24 @@ $pdf->setOption('replace', array(
 $pdf->removeOption('replace');
 ```
 
-## Templates
+## Templates, Header & Footer and Styling
 
 #### Page template
+If your page ist based on an DataObject and you generate the html with the $pdf::getHtml() function, you'll be able to set a specific template to use for this page by passing it as third parameter to the function (without the .ss ending!). By default, the module will search for a template called "Classname_pdf".
 
+#### Header & Footer
+WKhtmlTOpdf let you specify seperate files for your pdf's header and footer section. By default they are located under ``mysite/templates/Pdf/header.html`` and ``mysite/templates/Pdf/footer.html``.
+
+You can change the location of those files or remove the header and/or footer completely by changing the global or page specific options.
+
+``` php
+$pdf->setOption('header-html', '/path/to/header.html');
+$pdf->removeOption('footer-html');
+```
+
+Demo Pdf.ss, header.html and footer.html files are included to get you started
+
+#### Styling
+Thanks to WKhtmlTOpdf you have full CSS3 and HTML5 support and will be able to do fancy things "without" the limitations you'll have to face while using other tools like dompdf or tcpdf.
+
+By default the module requires a pdf.css in under themes/your-theme/css/pdf.css
