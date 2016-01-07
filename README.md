@@ -2,5 +2,7 @@
 
 This module adds the possibility to simply create PDFs from every DataObject you have.
 
+## Installation
+
 ```
 $ composer require creativesynergy/sivlerstripe-wkhtmltopdf
