@@ -180,7 +180,7 @@ class SS_PDF {
 
   public function preview() {
     if($this->pdf->toString() === false) {
-      throw new Exception('Could not create PDF: '.$this->pdf->getError());
+      throw new Exception('Could not create PDF: ' . $this->pdf->getError());
     } else {
       $this->pdf->send();
     }
@@ -192,7 +192,7 @@ class SS_PDF {
 
   public function download($filename) {
     if($this->pdf->toString() === false) {
-      throw new Exception('Could not create PDF: '.$this->pdf->getError());
+      throw new Exception('Could not create PDF: ' . $this->pdf->getError());
     } else {
       $filename = rtrim(File::create()->setName($filename), '.pdf') . '.pdf';
       $this->pdf->send($filename);
