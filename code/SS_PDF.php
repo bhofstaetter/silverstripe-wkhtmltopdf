@@ -4,7 +4,6 @@ use mikehaertl\wkhtmlto\Pdf;
 /**
  * @author Benedikt Hofstaetter <info@csy.io>
  */
- 
 class SS_PDF {
 
   private $globalOptions;
@@ -19,9 +18,8 @@ class SS_PDF {
 
   /**
   * Set the global options for all pdfs
-  * @param array $options             A list with all possible options can be found here http://wkhtmltopdf.org/usage/wkhtmltopdf.txt
+  * @param array $options A list with all possible options can be found here http://wkhtmltopdf.org/usage/wkhtmltopdf.txt
   */
-
   public function setGlobalOptions($options = null) {
     if(!$options) {
       $css = BASE_PATH . '/themes/' . SSViewer::current_theme() . '/css/pdf.css';
@@ -55,9 +53,10 @@ class SS_PDF {
 
   /**
   * Set a specific option for the pdf you are creating
-  * @param string $key                The name of the option you want to set.
-  *                                   A list with all possible options can be found here http://wkhtmltopdf.org/usage/wkhtmltopdf.txt
-  * @param string|array $value        The value of the option you want to set. Can be left blank.
+  * 
+  * @param string $key The name of the option you want to set.
+  *                    A list with all possible options can be found here http://wkhtmltopdf.org/usage/wkhtmltopdf.txt
+  * @param string|array $value The value of the option you want to set. Can be left blank.
   */
 
   public function setOption($key, $value = null) {
@@ -75,9 +74,9 @@ class SS_PDF {
 
   /**
   * Remove a specific option for the pdf you are creating
-  * @param string $key                The name of the option you want to set.
+  * 
+  * @param string $key The name of the option you want to set.
   */
-
   public function removeOption($key) {
     $globalOptions = $this->globalOptions;
     
@@ -93,9 +92,9 @@ class SS_PDF {
 
   /**
   * Specify the pdf location
-  * @param string $folder             The name of the desired folder. Creates a new one if folder doesn't exist.
+  * 
+  * @param string $folder The name of the desired folder. Creates a new one if folder doesn't exist.
   */
-
   public function setFolderName($folder = null) {
     if($folder) {
       $folder = Folder::find_or_make($folder);
@@ -107,13 +106,13 @@ class SS_PDF {
 
   /**
   * Generates the html code you need for the pdf
-  * @param DataObject $obj            The base DataObject for your pdf
-  * @param array $variables           Array with customisation for your data.
-  * @param string $template           If submitted the name of the template used to generate the html.
-  *                                   If not, the script will look for a template based on your DataObject class e.g. Trainer_pdf
-  * @return string                    The html code for your pdf
+  * 
+  * @param DataObject $obj The base DataObject for your pdf
+  * @param array $variables Array with customisation for your data.
+  * @param string $template If submitted the name of the template used to generate the html.
+  *                         If not, the script will look for a template based on your DataObject class e.g. Trainer_pdf
+  * @return string The html code for your pdf
   */
-
   static function getHtml($obj, $variables = null, $template = null) {
     Requirements::clear();
     
@@ -128,12 +127,12 @@ class SS_PDF {
 
   /**
   * Adds a normale page or cover to your pdf
-  * @param string $content            The html code from your DataObject, a pdf file or any website url
-  * @param string $type               "Page" for a normal page or if you want to add an cover "Cover"
-  * @param array $options             Specific options only for that page
-  *                                   A list with all possible options can be found here http://wkhtmltopdf.org/usage/wkhtmltopdf.txt
+  * 
+  * @param string $content The html code from your DataObject, a pdf file or any website url
+  * @param string $type "Page" for a normal page or if you want to add an cover "Cover"
+  * @param array $options Specific options only for that page
+  *                       A list with all possible options can be found here http://wkhtmltopdf.org/usage/wkhtmltopdf.txt
   */
-
   public function add($content, $type = 'Page', $options = array()) {
     if($type == 'Page') {
       $this->pdf->addPage($content, $options);
@@ -144,10 +143,10 @@ class SS_PDF {
 
   /**
   * Saves the pdf file
-  * @param string $filename           The desired name of the pdf file
-  * @return DataObject                The new created pdf file
+  * 
+  * @param string $filename The desired name of the pdf file
+  * @return DataObject The new created pdf file
   */
-
   public function save($filename) {
     if($this->pdf->toString() === false) {
       throw new Exception('Could not create PDF: ' . $this->pdf->getError());
@@ -160,10 +159,10 @@ class SS_PDF {
 
   /**
   * Creates an File DataObject from the pdf
-  * @param string $filename           The desired name of the pdf file
-  * @return DataObject                Pdf file
+  * 
+  * @param string $filename The desired name of the pdf file
+  * @return DataObject Pdf file
   */
-
   protected function createFile($filename) {
     $filename = trim($filename);
     $file = File::create();
@@ -177,7 +176,6 @@ class SS_PDF {
   /**
   * Streams the pdf to your browser to preview it
   */
-
   public function preview() {
     if($this->pdf->toString() === false) {
       throw new Exception('Could not create PDF: ' . $this->pdf->getError());
@@ -189,7 +187,6 @@ class SS_PDF {
   /**
   * Forces the download of the pdf
   */
-
   public function download($filename) {
     if($this->pdf->toString() === false) {
       throw new Exception('Could not create PDF: ' . $this->pdf->getError());
