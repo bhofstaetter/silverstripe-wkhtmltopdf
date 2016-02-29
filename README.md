@@ -19,7 +19,7 @@ $ composer require creativesynergy/silverstripe-wkhtmltopdf
 ``` php
 $trainer = Trainer::get()->first();
 $pdf = new SS_PDF();
-$html = $pdf::generateHtml($trainer);
+$html = $pdf::getHtml($trainer);
 $pdf->add($html);
 $pdf->save('trainer.pdf');
 ```
@@ -34,7 +34,7 @@ $pdf->add('.../path/to/cover.html', 'Cover');     // You could use the same inpu
 $pdf->add('<html>...</html>');                    // Html code
 $pdf->add('.../path/to/page.html');               // Html file
 $pdf->add('https://www.google.com');              // Website
-$pdf->add($pdf::generateHtml($dataObject));       // DataObject
+$pdf->add($pdf::getHtml($dataObject));       // DataObject
 ```
 
 #### Add specific options for one page
@@ -60,14 +60,14 @@ $variables = array(
   'MyFreakyWhatever'  => DataObject::get()->byID(123)->WhatEver()
 );
 
-$html = $pdf::generateHtml($trainer, $variables);
+$html = $pdf::getHtml($trainer, $variables);
 
 $pdf->add($html);
 ```
 
 #### Change the page template
 ``` php
-$html = $pdf::generateHtml($trainer, $variables, 'NewPDFTemplate');
+$html = $pdf::getHtml($trainer, $variables, 'NewPDFTemplate');
 $pdf->add($html);
 ```
 By default the module will look for a template called "ClassName_pdf"
