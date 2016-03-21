@@ -8,11 +8,12 @@ class SS_PDF {
 
   private $globalOptions;
   private $pdf;
-  private $folder = ASSETS_PATH . '/';
+  private $folder = ASSETS_PATH;
   private $folderID;
 
   function __construct() {
     $this->setGlobalOptions();
+    $this->folder .= '/';
     $this->pdf = new Pdf($this->globalOptions);
   }
 
