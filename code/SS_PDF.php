@@ -146,15 +146,16 @@ class SS_PDF {
   * Saves the pdf file
   * 
   * @param string $filename The desired name of the pdf file
+  * @param string $class Dataobject class of file
   * @return DataObject The new created pdf file
   */
-  public function save($filename) {
+  public function save($filename, $class = 'File') {
     if($this->pdf->toString() === false) {
       throw new Exception('Could not create PDF: ' . $this->pdf->getError());
     } else {
       $filename = rtrim(File::create()->setName($filename), '.pdf') . '.pdf';
       $this->pdf->saveAs($this->folder . $filename);
-      return $this->createFile($filename);
+      return $this->createFile($filename, $class);
     }
   }
 
@@ -162,11 +163,12 @@ class SS_PDF {
   * Creates an File DataObject from the pdf
   * 
   * @param string $filename The desired name of the pdf file
+  * @param string $class Dataobject class of file
   * @return DataObject Pdf file
   */
-  protected function createFile($filename) {
+  protected function createFile($filename, $class) {
     $filename = trim($filename);
-    $file = File::create();
+    $file = $class::create();
     $file->setName($filename);
     $file->Filename = $this->folder . $filename;
     $file->ParentID = $this->folderID;
