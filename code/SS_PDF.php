@@ -153,7 +153,7 @@ class SS_PDF {
     if($this->pdf->toString() === false) {
       throw new Exception('Could not create PDF: ' . $this->pdf->getError());
     } else {
-      $filename = rtrim(File::create()->setName($filename), '.pdf') . '.pdf';
+      $filename = rtrim($class::create()->setName($filename), '.pdf') . '.pdf';
       $this->pdf->saveAs($this->folder . $filename);
       return $this->createFile($filename, $class);
     }
