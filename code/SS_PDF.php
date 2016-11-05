@@ -45,7 +45,8 @@ class SS_PDF {
         'margin-right'      => 10,
         'margin-top'        => 30,
         'header-html'       => $header,
-        'footer-html'       => $footer
+        'footer-html'       => $footer,
+        'binary'            => '/usr/local/bin/wkhtmltopdf'
       );
     }
     
