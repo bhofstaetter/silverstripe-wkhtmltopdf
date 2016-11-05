@@ -100,7 +100,7 @@ class SS_PDF {
     if($folder) {
       $folder = Folder::find_or_make($folder);
       $this->folderID = $folder->ID;
-      $folder = str_replace('/assets/', '', $folder->Url);
+      $folder = str_replace('assets/', '', $folder->Filename);
       $this->folder = rtrim($this->folder . $folder, '/') . '/';
     }
   }
