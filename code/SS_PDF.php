@@ -151,7 +151,7 @@ class SS_PDF {
   * @return DataObject The new created pdf file
   */
   public function save($filename, $class = 'File') {
-    if($this->pdf->toString() === false) {
+    if(!empty($this->pdf->getError())) {
       throw new Exception('Could not create PDF: ' . $this->pdf->getError());
     } else {
       $filename = rtrim($class::create()->setName($filename), '.pdf') . '.pdf';
@@ -181,7 +181,7 @@ class SS_PDF {
   * Streams the pdf to your browser to preview it
   */
   public function preview() {
-    if($this->pdf->toString() === false) {
+    if(!empty($this->pdf->getError())) {
       throw new Exception('Could not create PDF: ' . $this->pdf->getError());
     } else {
       $this->pdf->send();
@@ -192,7 +192,7 @@ class SS_PDF {
   * Forces the download of the pdf
   */
   public function download($filename) {
-    if($this->pdf->toString() === false) {
+    if(!empty($this->pdf->getError())) {
       throw new Exception('Could not create PDF: ' . $this->pdf->getError());
     } else {
       $filename = rtrim(File::create()->setName($filename), '.pdf') . '.pdf';
