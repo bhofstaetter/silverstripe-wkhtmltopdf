@@ -186,6 +186,8 @@ class SS_PDF {
     } else {
       $this->pdf->send();
     }
+    
+    die();
   }
 
   /**
