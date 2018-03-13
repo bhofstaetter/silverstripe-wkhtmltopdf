@@ -8,7 +8,7 @@
   ],
   "type": "silverstripe-module",
   "require": {
-    "silverstripe/framework": "^3.2",
+    "silverstripe/framework": "^3.2|^4",
     "mikehaertl/phpwkhtmltopdf": "^2.1"
   },
   "extra": {
@@ -18,7 +18,7 @@
   "authors": [
     {
       "name": "Benedikt Hofstaetter",
-      "email": "info@csy.io"
+      "email": "info@stripeforge.io"
     }
   ],
   "homepage": "https://github.com/creativeSynergy/silverstripe-wkhtmltopdf"
