@@ -51,6 +51,7 @@ class SS_PDF {
     }
     
     $this->globalOptions = $options;
+    $this->pdf = new Pdf($this->globalOptions);
   }
 
   /**
