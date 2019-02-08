@@ -1,4 +1,4 @@
-*This module is now abandoned, for SilverStripe 4 you can use my new and improved version [silverstripe-wkhtmltox](https://github.com/grasenhiller/silverstripe-wkhtmltox)*
+**This module is now abandoned, for SilverStripe 4 you can use my new and improved version [silverstripe-wkhtmltox](https://github.com/grasenhiller/silverstripe-wkhtmltox)**
 
 -------
 
