@@ -1,3 +1,7 @@
+*This module is now abandoned, for SilverStripe 4 you can use my new and improved version [silverstripe-wkhtmltox](https://github.com/grasenhiller/silverstripe-wkhtmltox)*
+
+-------
+
 # Create PDFs in SilverStripe with the power of WKhtmlTOpdf
 
 This module adds the possibility to simply create PDFs from every DataObject you have. Based on [WKhtmlTOpdf](http://wkhtmltopdf.org/) and [mikehaertl's php wrapper](https://github.com/mikehaertl/phpwkhtmltopdf).
